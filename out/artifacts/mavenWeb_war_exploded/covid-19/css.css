@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+#img{background:url(%E5%9B%BE1.jpg); background-size:cover; height:405px}   <!--图-->
+
+#logo{position:absolute;left:600px;top:0px; font-family:"Times New Roman", Times, serif; font-size:90px; }
+
+
+
+
+.storeBox {width:22.5%; float:left; color:#999999; font-size:13px; line-height:17px; font-style:italic; box-shadow: 5px 5px 5px -5px  #666666;}
+
+.store {background:#ffffff; width:100%; }
+
+.storeTitle { width:100%; max-width:900px; text-align:center; margin:10px auto 60px auto; font-family: 'Montserrat', sans-serif; font-weight:300; font-size:26px; line-height:36px; color:#4C5363;}
+
+
+
+
+
+.storeBox {width:22.5%; float:left; margin:0px 1.25% 30px 1.25%; color:#999999; font-size:18px; line-height:17px; font-style:italic;}
+
+.storeBoxText {width:75%; float:left; height:110px;}
+
+ #pic{}
+<!--图-->

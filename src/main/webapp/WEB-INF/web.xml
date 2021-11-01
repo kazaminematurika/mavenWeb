@@ -1,0 +1,153 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name>Archetype Created Web Application</display-name>
+
+<!--  <filter>-->
+<!--    <filter-name>Multifilter</filter-name>-->
+<!--    <filter-class>Weed8_Test_Filter.Multifilter</filter-class>-->
+<!--    <init-param>-->
+<!--      <param-name>multi</param-name>-->
+<!--      <param-value>5</param-value>-->
+<!--    </init-param>-->
+<!--  </filter>-->
+
+<!--  <filter>-->
+<!--    <filter-name>AddFilter</filter-name>-->
+<!--    <filter-class>Weed8_Test_Filter.AddFilter</filter-class>-->
+<!--    <init-param>-->
+<!--      <param-name>add</param-name>-->
+<!--      <param-value>2</param-value>-->
+<!--    </init-param>-->
+<!--  </filter>-->
+
+<!--  <filter-mapping>-->
+<!--    <filter-name>AddFilter</filter-name>-->
+<!--    <servlet-name><ResultServlet</servlet-name>-->
+<!--  </filter-mapping>-->
+<!--  <filter-mapping>-->
+<!--    <filter-name>Multifilter</filter-name>-->
+<!--    <url-pattern>/*</url-pattern>-->
+<!--  </filter-mapping>-->
+
+<!--  <servlet>-->
+<!--    <description>This is the description of my J2EE component</description>-->
+<!--    <display-name>This is the display name of my J2EE component</display-name>-->
+<!--    <servlet-name>DispServletContext</servlet-name>-->
+<!--    <servlet-class>Weed8_Test_Servlet.DispServletContext</servlet-class>-->
+<!--  </servlet>-->
+<!--  <servlet>-->
+<!--    <description>This is the description of my J2EE component</description>-->
+<!--    <display-name>This is the display name of my J2EE component</display-name>-->
+<!--    <servlet-name>ResultServlet</servlet-name>-->
+<!--    <servlet-class>Weed8_Test_Servlet.ResultServlet</servlet-class>-->
+<!--  </servlet>-->
+
+  <filter>
+    <filter-name>MultiFilter</filter-name>
+    <filter-class>Weed8_Test_Filter.Multifilter</filter-class>
+    <init-param>
+      <param-name>multi</param-name>
+      <param-value>5</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>AddFilter</filter-name>
+    <filter-class>Weed8_Test_Filter.AddFilter</filter-class>
+    <init-param>
+      <param-name>add</param-name>
+      <param-value>2</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>SubFilter</filter-name>
+    <filter-class>Weed8_Test_Filter.Subfilter</filter-class>
+    <init-param>
+      <param-name>sub</param-name>
+      <param-value>6</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AddFilter</filter-name>
+    <servlet-name>ResultServlet</servlet-name>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>SubFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>MultiFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>Weed8_Test_Servlet.MyServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ResultServlet</servlet-name>
+    <servlet-class>Weed8_Test_Servlet.ResultServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/MyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResultServlet</servlet-name>
+    <url-pattern>/ResultServlet</url-pattern>
+  </servlet-mapping>
+<!--  <welcome-file-list>-->
+<!--    <welcome-file>index.jsp</welcome-file>-->
+<!--  </welcome-file-list>-->
+
+  <context-param>
+<!--    写入指定值<param-name>参数为servletContext.getInitParameter();中的影射参数-->
+    <param-name>breed</param-name>
+    <param-value>Great Dane</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>Weed9_Test_Listener.ServletContextListener</listener-class>
+  </listener>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DispServletContext</servlet-name>
+    <servlet-class>Weed9_Test_Servlet.DispServletContext</servlet-class>
+  </servlet>
+
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DelServletContextAttribute</servlet-name>
+    <servlet-class>Weed9_Test_Servlet.DelServletContextAttribute</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DispServletContext</servlet-name>
+    <url-pattern>/DispServletContext</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelServletContextAttribute</servlet-name>
+    <url-pattern>/DelServletContextAttribute</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
