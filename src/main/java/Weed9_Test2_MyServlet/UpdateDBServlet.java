@@ -33,7 +33,13 @@ public class UpdateDBServlet extends HttpServlet implements Servlet {
         printWriter.println("<html>");
         printWriter.println("<head><title>UpdateDBServlet</title></head>");
         printWriter.println("<body bgcolor='#f5f5dc'>");
+        //在监听类中<select>通过name = 'select' 传递了通过选择按钮传递的表单参数
+        //通过在接口方法中实例化了类StuBean以及类AccessDB以及调用了selectDBByid方法
+        // 使得能够准确的输出用户在第一个界面中选择的内容，通过ID查询数据库里面的内容
+        //在类StuBean 被new（实现）则会实现valueBound接口方法（HttpSessionBindingListener）链接了接口
         StuBean stuBean = new StuBean(Integer.parseInt(request.getParameter("select")));
+        //使用request.getSession();创建一个临时的被绑定对象存放器
+        //通过httpSession.setAttribute(’影射名‘, 传递的对象值)来设置被绑定对象需要传递的参数
         HttpSession httpSession  = request.getSession();
         httpSession.setAttribute("stuBean", stuBean);
         printWriter.println("<form method='post' action='http://localhost:8999/mavenWeb_war/UpdateMathServlet'>");

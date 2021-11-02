@@ -23,6 +23,7 @@ public class JDBC_Test {
                 System.out.println("Math:" + resultSet.getInt("Math"));
                 System.out.println("English:" + resultSet.getInt("English"));
             }
+
             mystatement.close();
             connection.close();
         } catch (SQLException throwables) {

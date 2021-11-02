@@ -35,9 +35,12 @@ private static final String CONTEXT_TYPE = "text/html; charset = UTF-8";
         printWriter.println("<body bgcolor='#f5f5dc'>");
         printWriter.println("<h3>修改数学成绩完成</h3>");
         HttpSession httpSession = request.getSession();
+        //通过httpSession.getAttribute（影射名）来引用之前通过getAttribute 绑定的对象
+        //通过被绑定对象传递input的参数
         StuBean stuBean = (StuBean) httpSession.getAttribute("stuBean");
         if (request.getParameter("Math") != null) {
             stuBean.setMath(Integer.parseInt(request.getParameter("Math")));
+            //通过销毁被绑定对象来调用valueUnbound接口方法传递了第二个参数给类AccessDB中UpdataDB方法的参数
             httpSession.removeAttribute("stuBean");
         }
         printWriter.println("</body>");

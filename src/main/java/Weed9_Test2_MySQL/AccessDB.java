@@ -30,12 +30,10 @@ public class AccessDB {
         Statement mystatement;
         ResultSet myresultSet;
         String sql = "select * from Weed5_Test";
-        PreparedStatement preparedStatement;
         try {
             connection = DriverManager.getConnection(url, user, password);
             mystatement = connection.createStatement();
-            preparedStatement = connection.prepareStatement(sql);
-            myresultSet = preparedStatement.executeQuery();
+            myresultSet = mystatement.executeQuery(sql);
             while (myresultSet.next()){
                 vector.add(new StuBean(myresultSet.getInt("ID"), myresultSet.getString("Name"), myresultSet.getInt("Chinese")
                 , myresultSet.getInt("Math"), myresultSet.getInt("English")));
@@ -68,6 +66,7 @@ public class AccessDB {
             connection = DriverManager.getConnection(url, user, password);
             mystatement = connection.createStatement();
             preparedStatement = connection.prepareStatement(sql);
+            //仅仅调用类方法的AccessDB传递了参数ID，参数ID通过类StuBean传递
             preparedStatement.setInt(1, ID);
             myresultSet = preparedStatement.executeQuery();
             while (myresultSet.next()){

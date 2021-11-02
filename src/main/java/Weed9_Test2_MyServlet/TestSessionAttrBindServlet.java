@@ -38,9 +38,11 @@ public class TestSessionAttrBindServlet extends HttpServlet implements Servlet {
         printWriter.println("<h3>测试对象绑定会话监听</h3>");
         printWriter.println("<form name = 'choose' method='post' action='http://localhost:8999/mavenWeb_war/UpdateDBServlet'>");
         printWriter.println("数据库记录信息:");
+        //通过<select>HTML标签生成一个文本显示框并传递表单选择参数action到另一个网页中
         printWriter.println("<select name = 'select' size='10'>");
         Vector vector = accessDB.selectDB();
         for (int i = 0; i < vector.size(); i++) {
+            //通过select子标签<option>创建一个select的选择内容标签
             printWriter.println("<option value=" + ((StuBean)vector.get(i)).getID() + ">");
             printWriter.println(vector.get(i).toString());
             printWriter.println("</option>");
