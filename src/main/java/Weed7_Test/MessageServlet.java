@@ -28,11 +28,10 @@ public class MessageServlet extends HttpServlet implements Servlet {
         printWriter.println("<body bgcolor='#f5f5dc'>");
         ServletContext servletContext = getServletContext();
         String username = request.getParameter("username");
-//        username = new String(username.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         String message = request.getParameter("message");
-//        message = new String(message.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         Vector vector = (Vector) servletContext.getAttribute("messagelist");
         if (message != null) {
+            //在传入判断结果前需要保留客户端输入的原有数据形式
             message = new String(message.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             vector.add(username + ":" + message);
         }

@@ -33,6 +33,7 @@ public class MainServlet extends HttpServlet implements Servlet {
         ServletContext servletContext = getServletContext();
         Vector vector = (Vector) servletContext.getAttribute("userlist");
         String username = request.getParameter("username");
+        //使用ISO_8859_1反编码令客户端的数据转化为二进制然后再从UTF-8中逐一寻找匹配的字串符
         username = new String(username.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         vector.add(username);
 //        getRequestDispatcher中的参数需要使用相对路径
