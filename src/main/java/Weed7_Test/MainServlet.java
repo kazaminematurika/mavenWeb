@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.Vector;
 
 /**
@@ -17,13 +18,14 @@ import java.util.Vector;
  */
 @WebServlet(name = "MainServlet", value = "/MainServlet")
 public class MainServlet extends HttpServlet implements Servlet {
-    private static final String CONTEXT_TYPE = "text/html; charset = UTF-8";
+    private static final String CONTEXT_TYPE = "text/html; charset = utf-8";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("utf-8");
         response.setContentType(CONTEXT_TYPE);
         PrintWriter printWriter = response.getWriter();
-        request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("utf-8");
         printWriter.println("<html>");
         printWriter.println("<head><title>MainServlet</title></head>");
         printWriter.println("<body bgcolor='#f5f5dc'>");
@@ -31,6 +33,7 @@ public class MainServlet extends HttpServlet implements Servlet {
         ServletContext servletContext = getServletContext();
         Vector vector = (Vector) servletContext.getAttribute("userlist");
         String username = request.getParameter("username");
+        username = new String(username.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         vector.add(username);
 //        getRequestDispatcher中的参数需要使用相对路径
 //        path中的参数符合HTML以及Servlet表达式不能使用空格分割表达式

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+import java.nio.charset.StandardCharsets;
 
 
 /**
@@ -21,11 +21,14 @@ public class responseservelt extends HttpServlet implements Servlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    response.setContentType("text/html;charset=GBK");
+    response.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html;charset=UTF-8");
     PrintWriter printWriter = response.getWriter();
-    request.setCharacterEncoding("GBK");
+    request.setCharacterEncoding("UTF-8");
     String username = request.getParameter("username");
+    username = new String (username.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8) ;
     String password = request.getParameter("password");
+    password = new String(password.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
     printWriter.println("<HTML>");
     printWriter.println("<HEAD><TITLE>responseservelt_Test</TITLE></HEAD>");
     printWriter.println("<BODY bgcolor=\"#ffffff\">");

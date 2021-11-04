@@ -18,15 +18,19 @@ import java.util.Vector;
 public class MessageServlet extends HttpServlet implements Servlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html; charset = UTF-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html; charset = utf-8");
         PrintWriter printWriter = response.getWriter();
+        request.setCharacterEncoding("utf-8");
         printWriter.println("<html>");
         printWriter.println("<head><title>MessageServlet</title></head>");
         printWriter.println("<body bgcolor='#f5f5dc'>");
-        request.setCharacterEncoding("UTF-8");
+
         ServletContext servletContext = getServletContext();
         String username = request.getParameter("username");
+//        username = new String(username.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         String message = request.getParameter("message");
+//        message = new String(message.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         Vector vector = (Vector) servletContext.getAttribute("messagelist");
         if (message != null) {
             vector.add(username + ":" + message);

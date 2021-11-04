@@ -20,9 +20,10 @@ import java.util.Vector;
 public class UserServlet extends HttpServlet implements Servlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset = utf-8");
         PrintWriter printWriter = response.getWriter();
+        request.setCharacterEncoding("utf-8");
         printWriter.println("<html>");
         printWriter.println("<head><title>UserServlet</title></head>");
         printWriter.println("<body bgcolor='#f5f5dc'>");

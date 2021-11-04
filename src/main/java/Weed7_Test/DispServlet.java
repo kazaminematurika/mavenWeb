@@ -18,9 +18,10 @@ import java.util.Vector;
 public class DispServlet extends HttpServlet implements Servlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html; charset = UTF-8");
-        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html; charset = utf-8");
         PrintWriter printWriter = response.getWriter();
+        request.setCharacterEncoding("utf-8");
         printWriter.println("<html>");
         printWriter.println("<head>" +
                 "<meta http-equiv='refresh' content='3'><title>DispServlet</title></head>");

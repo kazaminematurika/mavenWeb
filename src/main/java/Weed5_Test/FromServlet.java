@@ -19,6 +19,7 @@ public class FromServlet extends HttpServlet implements Servlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
         PrintWriter printWriter = response.getWriter();
         request.setCharacterEncoding("utf-8");
