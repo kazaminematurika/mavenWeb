@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.Vector;
 
 /**
@@ -25,7 +26,6 @@ public class MessageServlet extends HttpServlet implements Servlet {
         printWriter.println("<html>");
         printWriter.println("<head><title>MessageServlet</title></head>");
         printWriter.println("<body bgcolor='#f5f5dc'>");
-
         ServletContext servletContext = getServletContext();
         String username = request.getParameter("username");
 //        username = new String(username.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
@@ -33,6 +33,7 @@ public class MessageServlet extends HttpServlet implements Servlet {
 //        message = new String(message.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         Vector vector = (Vector) servletContext.getAttribute("messagelist");
         if (message != null) {
+            message = new String(message.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             vector.add(username + ":" + message);
         }
         printWriter.println("<iframe frameborder = 0 height = 146 marginheight = 0 marginwidth = 0 " +
