@@ -26,7 +26,7 @@ public class MyServlet extends HttpServlet implements Servlet {
         printWriter.println("<html>\n" +
                 "<head><title>MyServlet</title></head>\n" +
                 "<body bgcolor='#f5f5dc'>\n" +
-                "<form method='post' action='http://localhost:8999/mavenWeb_war/ResultServlet'>\n" +
+                "<form method='post' action='http://localhost:8999/MavenWeb_war/ResultServlet'>\n" +
                 "    请输入一个数字:<input type='text' name='param'>\n" +
                 "    <input type='submit' value='确定'>\n" +
                 "</form>\n" +

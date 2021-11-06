@@ -28,7 +28,7 @@ public class StudentServlet extends HttpServlet implements Servlet {
         if ((request.getParameter("StudentID")) == null || request.getParameter("StudentID").equals("Input number")){
             //method为浏览器的表单向服务器传递信息,POST(安全性,实数多性),GET(实数比较少)参数,action的参数为接受提交表单的服务器的名称
             //判断用户输入数值以维持当前界面还是输出结果
-            printWriter.println("<Form method = 'post' action = 'http://localhost:8999/mavenWeb_war/StudentServlet'>");
+            printWriter.println("<Form method = 'post' action = 'http://localhost:8999/MavenWeb_war/StudentServlet'>");
             printWriter.println("学生学号<input type = 'text' name = 'StudentID' value = 'Input number'/>");
             //创建提交表单数据的按钮
             printWriter.println("<input type = 'submit' value = '查询'/><br>");
@@ -37,7 +37,7 @@ public class StudentServlet extends HttpServlet implements Servlet {
         }
         else if (!(request.getParameter("StudentID").equals("Input number"))){
             Vector vector;
-            printWriter.println("<Form method = 'post' action = 'http://localhost:8999/mavenWeb_war/StudentServlet'>");
+            printWriter.println("<Form method = 'post' action = 'http://localhost:8999/MavenWeb_war/StudentServlet'>");
             printWriter.println("学生学号<input type = 'text' name = 'StudentID'/>");
             //创建提交表单数据的按钮
             printWriter.println("<input type = 'submit' value = '查询'/><br>");

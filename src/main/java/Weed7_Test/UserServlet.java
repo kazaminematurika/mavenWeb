@@ -42,7 +42,7 @@ public class UserServlet extends HttpServlet implements Servlet {
             servletContext.setAttribute("messagelist", message_vector);
         }
 
-        printWriter.println("<form method='post' action='http://localhost:8999/mavenWeb_war/MainServlet'>" +
+        printWriter.println("<form method='post' action='http://localhost:8999/MavenWeb_war/MainServlet'>" +
                 "请输入你的名字: <input type='text' name='username'/>" +
                 "<input type='submit' value='登录'/>" + "</form>");
         printWriter.println("</body>");

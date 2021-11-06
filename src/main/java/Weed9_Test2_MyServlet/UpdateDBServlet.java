@@ -42,7 +42,7 @@ public class UpdateDBServlet extends HttpServlet implements Servlet {
         //通过httpSession.setAttribute(’影射名‘, 传递的对象值)来设置被绑定对象需要传递的参数
         HttpSession httpSession  = request.getSession();
         httpSession.setAttribute("stuBean", stuBean);
-        printWriter.println("<form method='post' action='http://localhost:8999/mavenWeb_war/UpdateMathServlet'>");
+        printWriter.println("<form method='post' action='http://localhost:8999/MavenWeb_war/UpdateMathServlet'>");
         printWriter.println("学号:" + stuBean.getID() + "姓名:" + stuBean.getName() + "语文:" + stuBean.getChinese() + "数学:" + stuBean.getMath() + "英语:" + stuBean.getEnglish());
         printWriter.println("修改数学成绩入口");
         printWriter.println("<input type='text' name='Math' value=" + stuBean.getMath() + ">");

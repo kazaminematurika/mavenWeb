@@ -36,9 +36,9 @@ public class MessageServlet extends HttpServlet implements Servlet {
             vector.add(username + ":" + message);
         }
         printWriter.println("<iframe frameborder = 0 height = 146 marginheight = 0 marginwidth = 0 " +
-                "scrolling='auto' src='http://localhost:8999/mavenWeb_war/DispServlet' width='100%' height = '80%'>" + "</iframe>");
+                "scrolling='auto' src='http://localhost:8999/MavenWeb_war/DispServlet' width='100%' height = '80%'>" + "</iframe>");
 //        action跳转表达式的赋值符号不能使用空格进行分割,而且跳转表达式需要与之前的request.getRequestDispatcher(path)中的path参数的表达式相对应
-        printWriter.println("<form method='post' action='http://localhost:8999/mavenWeb_war/MessageServlet?username=" + username + "'>");
+        printWriter.println("<form method='post' action='http://localhost:8999/MavenWeb_war/MessageServlet?username=" + username + "'>");
         printWriter.println("<hr>");
         printWriter.println("请输入信息:<input type='text' name='message'>");
         printWriter.println("<input type='submit' value='发送'></from>");

@@ -36,7 +36,7 @@ public class TestSessionAttrBindServlet extends HttpServlet implements Servlet {
         printWriter.println("<head><title>TestSessionAttrBindServlet</title></head>");
         printWriter.println("<body bgcolor='#f5f5dc'>");
         printWriter.println("<h3>测试对象绑定会话监听</h3>");
-        printWriter.println("<form name = 'choose' method='post' action='http://localhost:8999/mavenWeb_war/UpdateDBServlet'>");
+        printWriter.println("<form name = 'choose' method='post' action='http://localhost:8999/MavenWeb_war/UpdateDBServlet'>");
         printWriter.println("数据库记录信息:");
         //通过<select>HTML标签生成一个文本显示框并传递表单选择参数action到另一个网页中
         printWriter.println("<select name = 'select' size='10'>");

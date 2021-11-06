@@ -27,8 +27,8 @@ public class FromServlet extends HttpServlet implements Servlet {
         printWriter.println("<HEAD><TITLE>Servlet_Test</TITLE>");
         printWriter.println("<BODY>");
         printWriter.println("<p>Please input a from</p>");
-//        printWriter.println("<FORM method='POST' action='http://localhost:8999/mavenWeb_war/FromServlet'>");
-        printWriter.println("<FORM method='POST' action='http://localhost:8999/mavenWeb_war/responseservelt'>");
+//        printWriter.println("<FORM method='POST' action='http://localhost:8999/MavenWeb_war/FromServlet'>");
+        printWriter.println("<FORM method='POST' action='http://localhost:8999/MavenWeb_war/responseservelt'>");
         printWriter.println("用户名:<input type='text' name='username'/><br>");
         printWriter.println("密码:&nbsp;&nbsp;<input type='password' name='password'/><br>");
         printWriter.println("<input type='Submit' value='提交'/><br>");

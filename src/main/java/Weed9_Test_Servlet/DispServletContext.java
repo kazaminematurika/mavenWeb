@@ -32,7 +32,7 @@ public class DispServletContext extends HttpServlet {
         //获取指定对象的上下文相关属性
         Dog dog = (Dog) getServletContext().getAttribute("dogName");
         printWriter.println("dog's breed is:" + dog.getBreed());
-        printWriter.println("<form method='post' action='http://localhost:8999/mavenWeb_war/DelServletContextAttribute'>" +
+        printWriter.println("<form method='post' action='http://localhost:8999/MavenWeb_war/DelServletContextAttribute'>" +
                 "<input type='submit' value='删除上下文属性'>"+
                 "</form>");
         printWriter.println("</body>");
