@@ -149,4 +149,17 @@
     <url-pattern>/DelServletContextAttribute</url-pattern>
   </servlet-mapping>
 
+<servlet>
+  <servlet-name>checkLogin</servlet-name>
+  <jsp-file>/Weed10_Test1_1.jsp</jsp-file>
+  <init-param>
+    <param-name>secret</param-name>
+    <param-value>123456</param-value>
+  </init-param>
+</servlet>
+
+  <servlet-mapping>
+    <servlet-name>checkLogin</servlet-name>
+    <url-pattern>/Weed10_Test1_1.jsp</url-pattern>
+  </servlet-mapping>
 </web-app>

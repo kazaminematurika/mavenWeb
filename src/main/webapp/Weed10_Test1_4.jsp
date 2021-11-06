@@ -5,12 +5,23 @@
   Time: 17:31
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" import="bsh.*" %>
+<%@ page import="java.awt.*" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Weed10_Test1_4</title>
 </head>
-<body>
-
+<body bgcolor="#e722ff">
+<h1>计算结果</h1>
+<%
+try {
+    Interpreter interpreter = new Interpreter();
+    interpreter.eval("el=" + request.getParameter("expr"));
+    out.println(request.getParameter("expr") + "=");
+    out.println(interpreter.get("el"));
+}catch (Exception exception){
+    exception.printStackTrace();
+}
+%>
 </body>
 </html>
