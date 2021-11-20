@@ -15,6 +15,10 @@
 <%
     String parameter = request.getParameter("param");
     String configInitParameter = config.getInitParameter("jspOff");
+    /*1.设定了Weed12_Test1_1的初始化数值，位于Web.XML
+    * 2.判断当前时间同时请求的客户端数量
+    * 3.当客户端请求数量hidden！=0，为客户端有请求以及<200为可承载量
+    * 符合上述条件时进入Weed12_Test1_1不符合则会跳转到Weed_Test1_4的预设的错误界面*/
     if (parameter != null && (parameter.equals(configInitParameter))){
 %>
 <form method="post" action="Weed12_Test1_2.jsp">
