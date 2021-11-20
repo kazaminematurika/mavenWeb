@@ -20,11 +20,11 @@ public class filter extends HttpServlet implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain FilterChain) throws IOException, ServletException {
-        String paramVaule = filterConfig.getInitParameter("");
+        String paramVaule = filterConfig.getInitParameter("filterOff");
         try{
-            String string = request.getParameter("");
+            String string = request.getParameter("times");
             if (string == null){
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("" + paramVaule);
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("Weed12_Test1_1.jsp?param=" + paramVaule);
                 requestDispatcher.forward(request, response);
             }else {
                 FilterChain.doFilter(request, response);
@@ -32,6 +32,10 @@ public class filter extends HttpServlet implements Filter {
         } catch (ServletException | IOException exception) {
             filterConfig.getServletContext().log(exception.getMessage());
         }
+    }
+
+    @Override
+    public void destroy() {
 
     }
 }

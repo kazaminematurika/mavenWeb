@@ -16,6 +16,7 @@ public class userBean {
     }
 
 
+
     public String getUser() {
         return user;
     }

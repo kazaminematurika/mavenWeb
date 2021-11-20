@@ -20,8 +20,7 @@
         <td>商品价格</td>
         <td>商品数量</td>
         <td>购物篮</td>
-        </tr></table>
-</form>
+        </tr>
 
 <%
     String url = "jdbc:mysql://localhost:3306/web企业级应用架构";
@@ -37,14 +36,25 @@
         mystatement = connection.createStatement();
         myresultSet = mystatement.executeQuery(sql);
         while (myresultSet.next()){
-            myresultSet.getString("ID");
-            myresultSet.getString("name");
-            myresultSet.getString("price");
-            myresultSet.getString("quantity");
+%>
+
+<tr><td><%= myresultSet.getString("ID")%></td>
+    <td><%= myresultSet.getString("name")%></td>
+    <td><%= myresultSet.getString("price")%></td>
+    <td><%= myresultSet.getString("quantity")%></td>
+    <td><input type="text" size="3" style="text-align: center" maxlength="4"></td>
+    <td><input type="checkbox"></td>
+</tr>
+
+<%
         }
     } catch (SQLException throwables) {
         throwables.printStackTrace();
     }
 %>
+
+</table>
+    <br><input type="submit" value="确认订购">
+</form>
 </body>
 </html>

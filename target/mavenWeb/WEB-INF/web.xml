@@ -162,4 +162,40 @@
     <servlet-name>checkLogin</servlet-name>
     <url-pattern>/Weed10_Test1_3.jsp</url-pattern>
   </servlet-mapping>
+
+  <display-name>jspFilterWebModule</display-name>
+  <filter>
+    <filter-name>filter</filter-name>
+    <filter-class>Weed12_Test.filter</filter-class>
+    <init-param>
+      <param-name>filterOff</param-name>
+      <param-value>200</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>filter</filter-name>
+    <servlet-name>Weed12StudentServlet</servlet-name>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>Weed12StudentServlet</servlet-name>
+    <jsp-file>/Weed12_Test1_2.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Weed12StudentServlet</servlet-name>
+    <url-pattern>/Weed12_Test1_2.jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LonginServlet</servlet-name>
+    <jsp-file>/Weed12_Test1_1.jsp</jsp-file>
+    <init-param>
+      <param-name>jspOff</param-name>
+      <param-value>200</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LonginServlet</servlet-name>
+    <url-pattern>/Weed12_Test1_1.jsp</url-pattern>
+  </servlet-mapping>
 </web-app>
