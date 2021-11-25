@@ -24,20 +24,20 @@
     String userName = request.getParameter("user");
     userName = new String(userName.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
   %>
-  用户名:<input type="text" name="user" value="<%=userName%>" readonly = "readonly">
+  用户名:<input type="text" name="user" value="<%=request.getParameter(userName)%>" readonly = "readonly">
   &nbsp;&nbsp;&nbsp;&nbsp;密码:<input type="password" name="password" value="<%=request.getParameter("password")%>" readonly = "readonly">
   <hr style="color: #ff0082 ; size: 5px">
   真实姓名:<input type="text" name="realName">
   <hr style="color: #f400ff ; size: 5px">
 <%--  type="radio"为input标签的单选按钮属性使得相同name值的input只能选择一个--%>
-  性别:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="男性">男性
-  &nbsp;&nbsp;<input type="radio" name="gender" value="女性">女性
+  性别:&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="man">男性
+  &nbsp;&nbsp;<input type="radio" name="gender" value="female">女性
   <br>
   <h1>你从哪知道本网站的主题</h1>
 <%--  使用chenkbox属性使得拥有相同name的input标签都可以复选--%>
-  <input type="checkbox" name="getType" value="互联网">互联网
-  <input type="checkbox" name="getType" value="报纸">报纸
-  <input type="checkbox" name="getType" value="电视">电视
+  <input type="checkbox" name="getType" value="Internet">互联网
+  <input type="checkbox" name="getType" value="newspaper">报纸
+  <input type="checkbox" name="getType" value="television">电视
   <hr style="color: #00f8ff ; size: 5px">
   <input type="submit" value="提交">
 </form>

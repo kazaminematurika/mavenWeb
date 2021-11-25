@@ -26,14 +26,19 @@
 <%
   Vector getTypeVector = new Vector();
   String[] getTypeList = request.getParameterValues("getType");
+  //创建一个集合使得在Weed12_Test1_2提交Name=getType(被数组包装着)提交到此的信息被存放到集合中
   for (int i = 0; i < getTypeList.length; i++) {
-        getTypeVector.add(getTypeList[i].getBytes(StandardCharsets.ISO_8859_1));
+        getTypeVector.add(getTypeList[i]);
   }
   userBean getTypeUserBean = (userBean) session.getAttribute("student");
+  /*1.jsp:useBean id=“”和jsp:setProperty name=“” 要一致
+  * 2.jsp:useBean scope=“”指定了getAttribute需要用到哪一个Javabean
+  * 3.在此处及下文调用了Javabean关于集合的setter和getter方法*/
   getTypeUserBean.setVector(getTypeVector);
 %>
 
     <hr style="color: #ff0082 ; size: 5px">
+<%--    property的数值必需要和用的Javabean保持一致--%>
     用户名:<jsp:getProperty name="student" property="user"/><br>
     密码:<jsp:getProperty name="student" property="password"/><br>
     姓名:<jsp:getProperty name="student" property="realName"/><br>
@@ -44,7 +49,7 @@
       Vector outputTypeVector = outputUserBean.getVector();
       if (outputTypeVector != null) {
         for (int i = 0; i < outputTypeVector.size(); i++) {
-          out.println(outputTypeVector.get(i).toString().getBytes(StandardCharsets.ISO_8859_1));
+          out.println(outputTypeVector.get(i).toString());
           out.println("&nbsp;&nbsp;&nbsp;");
         }
       }

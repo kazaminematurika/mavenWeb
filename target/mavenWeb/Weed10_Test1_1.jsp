@@ -53,7 +53,7 @@
     }
 </script>
 <body bgcolor="#e722ff">
-    <form name="MyForm" method="post" action="Weed10_Test1_3.jsp" onsubmit="check()">
+    <form method="post" action="Weed10_Test1_3.jsp" onsubmit="check()">
         请输入密码:<input name="pass" type="password" id="password">
         <input value="登录" type="submit">
     </form>
