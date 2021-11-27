@@ -36,7 +36,7 @@ public class AccessDB {
             myresultSet = mystatement.executeQuery(sql);
             while (myresultSet.next()){
                 vector.add(new StuBean(myresultSet.getInt("ID"), myresultSet.getString("Name"), myresultSet.getInt("Chinese")
-                , myresultSet.getInt("Math"), myresultSet.getInt("English")));
+                        , myresultSet.getInt("Math"), myresultSet.getInt("English")));
 
             }
             myresultSet.close();
@@ -70,8 +70,8 @@ public class AccessDB {
             preparedStatement.setInt(1, ID);
             myresultSet = preparedStatement.executeQuery();
             while (myresultSet.next()){
-               stuBean = new StuBean(myresultSet.getInt("ID"), myresultSet.getString("Name"),
-                       myresultSet.getInt("Chinese"), myresultSet.getInt("Math"), myresultSet.getInt("English"));
+                stuBean = new StuBean(myresultSet.getInt("ID"), myresultSet.getString("Name"),
+                        myresultSet.getInt("Chinese"), myresultSet.getInt("Math"), myresultSet.getInt("English"));
             }
             myresultSet.close();
             mystatement.close();
@@ -98,29 +98,29 @@ public class AccessDB {
 
         String sql = "update weed5_test set math = ? where ID = ?";
         if (stuBean.getMath() != test){
-             try{
-                 connection = DriverManager.getConnection(url, user, password);
-                 mystatement = connection.createStatement();
-                 preparedStatement = connection.prepareStatement(sql);
-                 preparedStatement.setInt(1, test);
-                 preparedStatement.setInt(2, ID);
-                 int row = preparedStatement.executeUpdate();
-                 if (row != 0){
-                     System.out.println("数据修改完成....");
-                     preparedStatement.close();
-                     mystatement.close();
-                     connection.close();
-                     return "修改数据完成....";
-                 }else {
-                     preparedStatement.close();
-                     mystatement.close();
-                     connection.close();
-                     return "数据修改失败";
-                 }
-             } catch (SQLException throwables) {
-                 throwables.printStackTrace();
-             }
-             return null;
+            try{
+                connection = DriverManager.getConnection(url, user, password);
+                mystatement = connection.createStatement();
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setInt(1, test);
+                preparedStatement.setInt(2, ID);
+                int row = preparedStatement.executeUpdate();
+                if (row != 0){
+                    System.out.println("数据修改完成....");
+                    preparedStatement.close();
+                    mystatement.close();
+                    connection.close();
+                    return "修改数据完成....";
+                }else {
+                    preparedStatement.close();
+                    mystatement.close();
+                    connection.close();
+                    return "数据修改失败";
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            return null;
         }else {
             return "成绩没有改变,无需修改";
         }
