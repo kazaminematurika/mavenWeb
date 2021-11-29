@@ -40,6 +40,7 @@
     <hr style="color: #ff0082 ; size: 5px">
 <%--    property的数值必需要和用的Javabean保持一致--%>
     用户名:<jsp:getProperty name="student" property="user"/><br>
+<%--    <jsp:getProperty name="student" property="gender"/>  --%>
     密码:<jsp:getProperty name="student" property="password"/><br>
     姓名:<jsp:getProperty name="student" property="realName"/><br>
     性别:<jsp:getProperty name="student" property="gender"/><br>

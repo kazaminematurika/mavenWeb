@@ -26,6 +26,7 @@
   %>
   用户名:<input type="text" name="user" value="<%=request.getParameter(userName)%>" readonly = "readonly">
   &nbsp;&nbsp;&nbsp;&nbsp;密码:<input type="password" name="password" value="<%=request.getParameter("password")%>" readonly = "readonly">
+<%--  <label name="password"></label>--%>
   <hr style="color: #ff0082 ; size: 5px">
   真实姓名:<input type="text" name="realName">
   <hr style="color: #f400ff ; size: 5px">

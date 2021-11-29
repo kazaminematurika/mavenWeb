@@ -40,16 +40,22 @@
                 while (myresultSet.next()){
         %>
         <tr>
-            <td><%=myresultSet.getString("ID")%></td>
+<%--            <td><input name="ID" value="<%=myresultSet.getString("ID")%>"></td>--%>
+<%--            <td><input name="Name" value="<%=myresultSet.getString("Name")%>"></td>--%>
+<%--            <td><input name="price" value="<%=myresultSet.getString("price")%>"></td>--%>
+            <%--       maxlength属性为input输入框可以输入的最大字符串值, minlength为可以输入的最小字符串的数值 --%>
+            <td><%=myresultSet.getInt("ID")%></td>
             <td><%=myresultSet.getString("Name")%></td>
             <td><%=myresultSet.getString("price")%></td>
-            <%--       maxlength属性为input输入框可以输入的最大字符串值 ,现在为0-10 --%>
-            <td><input type="text" size="3" style="text-align: center" maxlength="10"></td>
-<%--            <td><input type="checkbox" name="getCommodity"></td>--%>
+            <td><input type="text" size="3" style="text-align: center" maxlength="<%=myresultSet.getInt("quantity")%>" minlength="0" value="0" name="<%=myresultSet.getInt("ID")%>"></td>
+            <td><input type="checkbox" name="getCommodity" value="<%=myresultSet.getInt("ID")%>"></td>
 
-            <td><input type="checkbox"></td>
+<%--            <td><input type="checkbox"></td>--%>
         </tr>
-        <%}
+        <%
+                    //将每条商品的信息保存在对象会话中,key为商品的ID, value为商品的每一天信息
+                session.setAttribute(String.valueOf(myresultSet.getInt("ID")), myresultSet.getInt("ID") + "," + myresultSet.getString("Name") + "," + myresultSet.getString("price"));
+                }
                 connection.close();
                 mystatement.close();
                 myresultSet.close();
@@ -60,6 +66,9 @@
     </table>
 <%--    <input type="hidden" value="1" name="OrderID">--%>
     <input type="submit" value="提交订单">
+    <%
+
+    %>
 </form>
 </body>
 </html>
