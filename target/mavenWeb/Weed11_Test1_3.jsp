@@ -1,5 +1,4 @@
 <%@ page import="java.util.Vector" %>
-<%@ page import="Weed11_Test.commodityBean" %>
 <%@ page import="java.util.Date" %><%--
   Created by IntelliJ IDEA.
   User: Kazamine_Setueka
@@ -52,6 +51,7 @@ double countCommodityPrice = 0;
 %>
 
 <%--判断用户选择了什么商品--%>
+<%--    读取用户选择的choice那一整行的商品相关信息--%>
 <%
     String CommodityList[] = request.getParameterValues("getCommodity");
     for (int i = 0; i < CommodityList.length; i++) {
@@ -71,7 +71,7 @@ double countCommodityPrice = 0;
     countCommodityPrice += price;
 
     out.print(choiceCommdityAndNumber + "合计:" + price);
-    vector.add(choiceCommdityAndNumber + "合计" + price);
+    vector.add(choiceCommdityAndNumber + "合计:" + price);
     %>
 
 </li>

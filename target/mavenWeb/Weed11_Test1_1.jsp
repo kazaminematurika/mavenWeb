@@ -47,6 +47,7 @@
             <td><%=myresultSet.getInt("ID")%></td>
             <td><%=myresultSet.getString("Name")%></td>
             <td><%=myresultSet.getString("price")%></td>
+<%--    设置input的name的value,部署到对象上下文中使用request.getparameter(value)获取input里面的数值--%>
             <td><input type="text" size="3" style="text-align: center" maxlength="<%=myresultSet.getInt("quantity")%>" minlength="0" value="0" name="<%=myresultSet.getInt("ID")%>"></td>
             <td><input type="checkbox" name="getCommodity" value="<%=myresultSet.getInt("ID")%>"></td>
 
