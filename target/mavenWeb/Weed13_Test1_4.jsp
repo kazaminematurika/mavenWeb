@@ -41,12 +41,14 @@
         for (int i = 0; i <(request.getParameterValues("getInformationCheckbox")).length ; i++) {
             pageContext.setAttribute("i", (request.getParameterValues("getInformationCheckbox"))[i]);
         %>
+    <tr>
     <td>${getStudent[i].name}</td>
     <td>${getStudent[i].age}</td>
     <td>${getStudent[i].gender}</td>
     <td>${getStudent[i].result[0]}</td>
     <td>${getStudent[i].result[1]}</td>
     <td>${getStudent[i].result[2]}</td>
+    </tr>
     <%}%>
 </table>
 </body>

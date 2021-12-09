@@ -67,9 +67,9 @@
     </table>
 <%--    <input type="hidden" value="1" name="OrderID">--%>
     <input type="submit" value="提交订单">
-    <%
+<%--    <%--%>
 
-    %>
+<%--    %>--%>
 </form>
 </body>
 </html>
