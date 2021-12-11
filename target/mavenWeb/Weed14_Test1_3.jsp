@@ -9,8 +9,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+
+<%--<%--%>
+<%--    String path = request.getContextPath();--%>
+<%--    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";--%>
+<%--%>--%>
+
 <html>
 <head>
+<%--    <base href="<%=basePath%>">--%>
     <title>Weed14_Test1_3</title>
 </head>
 <body>
@@ -36,7 +43,7 @@
 %>
 
 <%Vector vector = new Vector();%>
-<c:forTokens items="${param.inputData}" delims="," var="item" varStatus="">
+<c:forTokens items="${param.inputData}" var="item" delims="," varStatus="status">
     <c:set var="value" value="${item}" scope="page"/>
     <%
         String string = (String) pageContext.getAttribute("value");
@@ -47,6 +54,6 @@
 <br>
 <fmt:message bundle="${zone}" key="Label1"/>
 &nbsp;
-<%getMaxNumber(vector);%>
+<%=getMaxNumber(vector)%>
 </body>
 </html>

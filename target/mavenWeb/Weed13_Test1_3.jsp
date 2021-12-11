@@ -14,21 +14,35 @@
             width: 200px;
             height: 100px;
             border: 1px solid #c0c0c0;
-            text-align: center;
+            /*text-align: center;*/
             font-size: 30px;
             /*设置表格边框模型*/
-            border-collapse: collapse;
+            /*border-collapse: collapse;*/
+            white-space: nowrap;
         }
         #oTable1 td{
             border: 1px solid #c0c0c0;
             font-size: 20px;
+            white-space: nowrap;
         }
     </style>
+<%--    <script type="text/javascript">--%>
+<%--        function show() {--%>
+<%--        obj.firstChild.firstChild.checked =! obj.firstChild.firstChild.checked;--%>
+<%--        obj.style.backgroundColor = obj.firstChild.firstChild.checked ? "yellow" : "#FFFFFF";--%>
+<%--    }--%>
+<%--    </script>--%>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
-        function show() {
-        obj.firstChild.firstChild.checked =! obj.firstChild.firstChild.checked;
-        obj.style.backgroundColor = obj.firstChild.firstChild.checked ? "yellow" : "#FFFFFF";
-    }
+        $(document).ready(function (){
+            $("input[name = 'getInformationCheckbox']").bind("click", function (){
+                if($(this).attr("checked")){
+                    $(this).parent().parent().attr.css("background", "yellow");
+                }else {
+                    $(this).parent().parent().removeAttr.css("background");
+                }
+            });
+        });
     </script>
 </head>
 <%--直接实例化对呀JavaBean类的3个对象--%>
@@ -58,7 +72,8 @@
                 pageContext.setAttribute("i", new Integer(i));
 
         %>
-        <tr onclick="show(this)">
+<%--        <tr onclick="show(this)">--%>
+        <tr>
             <td><input type="checkbox" name="getInformationCheckbox" value="<%=i%>"></td>
             <td>${getStudent[i].name}</td>
             <td>${getStudent[i].age}</td>

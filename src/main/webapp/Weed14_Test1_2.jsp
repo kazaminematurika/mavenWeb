@@ -9,8 +9,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
+
+<%--<%--%>
+<%--    String path = request.getContextPath();--%>
+<%--    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";--%>
+<%--%>--%>
+
 <html>
 <head>
+<%--    <base href="<%=basePath%>">--%>
     <title>Weed14_Test1_2</title>
 </head>
 <body>
@@ -28,8 +35,9 @@
 <fmt:message bundle="${zone}" key="Label1" var="item" scope="page"/>
 <h1>${item}</h1>
 <form method="post" action="Weed14_Test1_3.jsp">
-    <input type="text" name="inputData">(<fmt:message bundle="${zone}" key="Label2"/>)
-    <br>
+<%--    <input type="text" name="inputData">(<fmt:message bundle="${zone}" key="Label2"/></fmt:message>)/>--%>
+    <input type="text" name="inputData">(<fmt:message bundle="${zone}" key="Label2">)</fmt:message>
+    <br/>
     <input type="submit" value="${item}">
 </form>
 </body>
